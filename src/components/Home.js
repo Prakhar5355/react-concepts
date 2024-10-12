@@ -5,7 +5,10 @@ const Home = () =>{
     return(
         <>
         <h1>Hello Prakhar</h1>
+        <div className="parent" style={{display:"flex"}}>
        <Link to="/about"><button>About</button></Link>
+       <Link to="/contact"><button>Contact us</button></Link>
+       </div>
         </>
     )
 }

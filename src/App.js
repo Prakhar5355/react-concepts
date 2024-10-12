@@ -1,6 +1,13 @@
-import { createBrowserRouter, RouterProvider, Routes } from 'react-router-dom';
-import About from './components/About';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React, { Suspense } from 'react';
 import Home from './components/Home';
+// import Contact from './components/Contact';
+
+// Lazy load the About component
+const About = React.lazy(() => import('./components/About'));
+const Contact = React.lazy(() => import('./components/Contact'));
+
+// Define your routes
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -10,15 +17,20 @@ const appRouter = createBrowserRouter([
     path: "/about",
     element: <About />,
   },
+  {
+    path: "/contact",
+    element: <Contact name={"prakhar"} />,
+  }
 ]);
 
 function App() {
   return (
-    <RouterProvider router={appRouter} />
+    // Wrap the entire RouterProvider with Suspense
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <RouterProvider router={appRouter} />
+    </Suspense>
   );
 }
-
-
 // older syntax with BowserRouter and Routes
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -32,4 +44,5 @@ function App() {
 //     </BrowserRouter>
 //   );
 // }
+
 export default App;
