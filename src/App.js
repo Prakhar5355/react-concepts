@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import Home from './components/Home';
 import Profile from './components/Profile';
+import { UserProvider } from './utils/UserContext';
 // import Contact from './components/Contact';
 
 // Lazy load the About component
@@ -31,9 +32,11 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     // Wrap the entire RouterProvider with Suspense
+    <UserProvider>
     <Suspense fallback={<h1>Loading...</h1>}>
       <RouterProvider router={appRouter} />
     </Suspense>
+    </UserProvider>
   );
 }
 // older syntax with BowserRouter and Routes
