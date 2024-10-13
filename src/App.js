@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import Home from './components/Home';
+import Profile from './components/Profile';
 // import Contact from './components/Contact';
 
 // Lazy load the About component
@@ -20,6 +21,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact name={"prakhar"} />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   }
 ]);
 

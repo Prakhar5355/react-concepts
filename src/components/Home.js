@@ -8,9 +8,11 @@ const Home = () =>{
         <div className="parent" style={{display:"flex"}}>
        <Link to="/about"><button>About</button></Link>
        <Link to="/contact"><button>Contact us</button></Link>
+       <Link to="/profile"><button>My Profile</button></Link>
        </div>
         </>
     )
 }
 
 export default Home
+
