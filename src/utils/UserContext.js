@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from 'react';
-import { initialState, userReducer } from './userReducer'; // Adjust the import path as necessary
+import { initialState, UserReducer } from './UserReducer'; // Adjust the import path as necessary
 
 // Create the context
 export const UserContext = createContext(  
@@ -10,7 +10,7 @@ export const UserContext = createContext(
 
 // Create a provider component
 export const UserProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(userReducer, initialState);
+  const [state, dispatch] = useReducer(UserReducer, initialState);
 
   const changeEmail = (newEmail) => {
     dispatch({ type: 'CHANGE_EMAIL', payload: newEmail });

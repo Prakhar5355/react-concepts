@@ -5,7 +5,7 @@ const initialState = {
   };
   
   // Define the reducer function
-  const userReducer = (state, action) => {
+  const UserReducer = (state, action) => {
     switch (action.type) {
       case 'CHANGE_EMAIL':
         return { ...state, email: action.payload };
@@ -16,5 +16,5 @@ const initialState = {
     }
   };
   
-  export { initialState, userReducer };
+  export { initialState, UserReducer };
   
