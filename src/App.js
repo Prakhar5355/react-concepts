@@ -5,6 +5,7 @@ import Profile from './components/Profile';
 import { UserProvider } from './utils/UserContext';
 import { Provider } from 'react-redux';
 import store from './utils/store';
+import OptimizeMemo from './components/OptimizeMemo';
 // import Contact from './components/Contact';
 
 // Lazy load the About component
@@ -28,7 +29,11 @@ const appRouter = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+  },{
+  path:"/square",
+  element:<OptimizeMemo/>
   }
+
 ]);
 
 function App() {

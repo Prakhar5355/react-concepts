@@ -10,6 +10,7 @@ const Home = () =>{
        <Link to="/about"><button>About</button></Link>
        <Link to="/contact"><button>Contact us</button></Link>
        <Link to="/profile"><button>My Profile</button></Link>
+       <Link to="/square"><button>Calculate Square</button></Link>
        </div>
         </>
     )
